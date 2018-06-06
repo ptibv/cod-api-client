@@ -1,0 +1,23 @@
+{
+  "name": "ptibv/cod-api-client",
+  "description": "CODAPI client rest library",
+  "keywords": [
+    "codapi",
+    "api",
+    "library"
+  ],
+  "homepage": "https://github.com/ptibv/cod-api-client",
+  "type": "library",
+  "license": "proprietary",
+  "support": {
+    "source": "https://github.com/ptibv/cod-api-client"
+  },
+  "require-dev": {
+    "codeception/codeception": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ptibv\\codapiclient\\": "src/"
+    }
+  }
+}
