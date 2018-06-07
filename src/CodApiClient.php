@@ -60,6 +60,15 @@ class CodApiClient
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($apiData));
 
-        return json_decode(curl_exec($ch));
+        $sResult = curl_exec($ch);
+        if ($sResult !== false) {
+            $sDecodedResult = json_decode($sResult);
+            if ($sDecodedResult !== null) {
+                //Jay, success
+                return $sDecodedResult;
+            }
+        }
+
+        return false;
     }
 }
