@@ -11,7 +11,7 @@ use ptibv\codapiclient\GetFeedback;
  */
 class GetFeedbackEmailCest
 {
-    public function testSendEmail(UnitTester $I)
+    public function testGetFeedback(UnitTester $I)
     {
         // get config parameters
         $config = Configuration::config()['parameters'];
