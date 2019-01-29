@@ -12,4 +12,5 @@ parameters:
     baseUrl: 'url_to_api'
     apiKey: 'changeme'
     smsNumber: 'changeme'
+    textToSpeechNumber: 'changeme'
     emailReceiver: 'changeme'
