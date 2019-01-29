@@ -33,18 +33,26 @@ class SendSms extends CodApiClient
     public $text;
 
     /**
-     * Send en sms
+     * Send an sms
      *
      * @return mixed
      */
     public function send()
     {
-        $requestData = array(
+        return $this->callCodApi('/sms/send', $this->getData());
+    }
+
+    /**
+     * Generate data for request
+     *
+     * @return array
+     */
+    protected function getData()
+    {
+        return array(
             'sender' => $this->sender,
             'receiver' => $this->receiver,
             'text' => $this->text,
         );
-
-        return $this->callCodApi('/sms/send', $requestData);
     }
 }

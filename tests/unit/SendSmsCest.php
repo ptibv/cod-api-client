@@ -11,7 +11,7 @@ use ptibv\codapiclient\SendSms;
  */
 class SendSmsCest
 {
-    public function SendEmail(UnitTester $I)
+    public function testSendSms(UnitTester $I)
     {
         // get config parameters
         $config = Configuration::config()['parameters'];
@@ -21,6 +21,10 @@ class SendSmsCest
         $sms->receiver = $config['smsNumber'];
         $sms->sender = 'CODAPITEST';
         $result = $sms->send();
+
+        if (!$result) {
+            $I->fail('Something went wrong with the request');
+        }
 
         // test result
         if (property_exists($result, 'success')) {

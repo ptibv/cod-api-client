@@ -85,13 +85,23 @@ class SendEmail extends CodApiClient
     public $trackableOpens = false;
 
     /**
-     * Send en email
+     * Send an email
      *
      * @return mixed
      */
     public function send()
     {
-        $requestData = array(
+        return $this->callCodApi('/email/send', $this->getData());
+    }
+
+    /**
+     * Generate data for request
+     *
+     * @return array
+     */
+    protected function getData()
+    {
+        return array(
             'emailFrom' => $this->emailFrom,
             'emailTo' => $this->emailTo,
             'subject' => $this->subject,
@@ -103,7 +113,5 @@ class SendEmail extends CodApiClient
             'trackableUrls' => $this->trackableUrls,
             'trackableOpens' => $this->trackableOpens,
         );
-
-        return $this->callCodApi('/email/send', $requestData);
     }
 }

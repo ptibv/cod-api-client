@@ -25,6 +25,10 @@ class SendEmailCest
         $email->txtContent = 'textcontent';
         $result = $email->send();
 
+        if (!$result) {
+            $I->fail('Something went wrong with the request');
+        }
+
         // test result
         if (property_exists($result, 'success')) {
             $I->assertEquals(true, $result->success);

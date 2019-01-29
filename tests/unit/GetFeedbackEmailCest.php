@@ -24,6 +24,10 @@ class GetFeedbackEmailCest
         $feedback->limit = 1000;
         $result = $feedback->getFeedback();
 
+        if (!$result) {
+            $I->fail('Something went wrong with the request');
+        }
+
         // test result
         if (property_exists($result, 'success')) {
             $I->assertEquals(true, $result->success);

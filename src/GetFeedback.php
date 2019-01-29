@@ -52,7 +52,7 @@ class GetFeedback extends CodApiClient
         $requestData = array(
             'date' => $this->date,
             'start' => $this->start,
-            'limit' => $this->limit
+            'limit' => $this->limit,
         );
 
         return $this->callCodApi('/' . $this->communicationType . '/get-feedback', $requestData);

@@ -12,6 +12,9 @@
   "support": {
     "source": "https://github.com/ptibv/cod-api-client"
   },
+  "require": {
+    "php": "~7.0"
+  },
   "require-dev": {
     "codeception/codeception": "*"
   },
