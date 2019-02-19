@@ -22,6 +22,7 @@ class PrintLetterCest
             base64_encode(file_get_contents(codecept_data_dir() . 'File2.pdf')),
         ];
         $model->address = json_decode(file_get_contents(codecept_data_dir() . 'PrintLetter.json'));
+        $model->envelopeType = 'BE01';
         $model->logoId = '12345';
         $model->batchId = 'CODAPITEST';
         $result = $model->send();

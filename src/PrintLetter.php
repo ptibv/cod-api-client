@@ -35,6 +35,14 @@ class PrintLetter extends CodApiClient
     public $address;
 
     /**
+     * These types are provided by the administrator of the COD API
+     * Example: "BE01"
+     *
+     * @var string
+     */
+    public $envelopeType;
+
+    /**
      * ID of the logo used
      *
      * @var string
@@ -70,6 +78,7 @@ class PrintLetter extends CodApiClient
         return array(
             'files' => $this->files,
             'address' => $this->address,
+            'envelopeType' => $this->envelopeType,
             'logoId' => $this->logoId,
             'batchId' => $this->batchId,
         );
